@@ -1,0 +1,30 @@
+#Spring的配置
+spring:
+  application:
+    name: microservice_product
+  datasource:
+    #数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    #驱动
+    driver-class-name: com.mysql.jdbc.Driver
+    #数据库连接
+    url: jdbc:mysql://localhost:3306/mircodb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    #用户名
+    username: root
+    #密码
+    password: root
+
+
+server:
+  port: 8001
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    #注册eureka中
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  instance:
+    instance-id: microservicecloud_product8001
